@@ -32,20 +32,20 @@
 	
 <div class="aw-layout-page">
 	
-	<nav class="navbar  navbar-fixed-top  navbar-default" id="main-navbar">
+	<nav class="navbar  navbar-fixed-top  navbar-default  js-sticky-reference" id="main-navbar">
 		<div class="container-fluid">
 	
 			<div class="navbar-header">
-     			<a class="navbar-brand  hidden-xs" href="#">
-       				<img alt="AlgaWorks" src="/assets/images/logo.png">
-     			</a>
+				<a class="navbar-brand  hidden-xs" href="#">
+					<img alt="AlgaWorks" src="/assets/images/logo.png">
+				</a>
 
 				<ul class="nav  navbar-nav">
 					<li>
 						<a href="#" class="js-sidebar-toggle"><i class="fa  fa-bars"></i></a>
 					</li>
 				</ul>
-	   		</div>
+			</div>
 	
 			<ul class="nav navbar-nav  navbar-right">
 			
@@ -54,15 +54,15 @@
 				</li>
 				
 				<li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa  fa-envelope"></i> <span class="label  label-danger  aw-label-corner">48</span>
-                    </a>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+						<i class="fa  fa-envelope"></i> <span class="label  label-danger  aw-label-corner">48</span>
+					</a>
                     
 					<ul class="dropdown-menu">
-						<li><a href="javascript:;">teste</a></li>
+						<li><a href="javascript:;">Item 1</a></li>
+						<li><a href="javascript:;">Item 2</a></li>
 					</ul>
 				</li>
-				
 				
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -86,8 +86,7 @@
 				
 				<li>
 					<a href="#"><em class="fa  fa-sign-out"></em></a>
-				</li>
-					
+				</li>	
 			</ul>
 	
 		</div>
@@ -96,47 +95,48 @@
 	<div class="aw-layout-page__sidebar  js-sidebar">
 		<div class="aw-layout-page__sidebar-content">
 
-        	<nav class="aw-menu">
-	            <ul class="aw-menu__item-list">
+			<nav class="aw-menu">
+				<ul class="aw-menu__item-list">
 	
-	                <li class="aw-menu__item  aw-menu__item--group">
-	                    <a href="#"><i class="fa fa-fw fa-home"></i><span>Dashboard</span></a>
-	                </li>
-	                <li class="aw-menu__item  aw-menu__item--group">
-	                    <a href="#"><i class="fa fa-fw fa-user"></i><span>Contatos</span> </a>
-	                </li>
+					<li class="aw-menu__item  aw-menu__item--group">
+						<a href="#"><i class="fa fa-fw fa-home"></i><span>Dashboard</span></a>
+					</li>
+					<li class="aw-menu__item  aw-menu__item--group">
+						<a href="#"><i class="fa fa-fw fa-user"></i><span>Contatos</span> </a>
+					</li>
 	
-	                <li class="aw-menu__item  aw-menu__item--group  is-expanded">
-	                    <a href="#">
-	                    	<i class="fa  fa-fw  fa-file-text"></i><span>Relatórios</span>
-	                    	<div class="aw-menu__navigation-icon"><span class="fa  aw-fa-arrow-down"></span></div>
-	                    </a>
+					<li class="aw-menu__item  aw-menu__item--group  is-expanded">
+						<a href="#">
+							<i class="fa  fa-fw  fa-file-text"></i><span>Páginas</span>
+							<i class="aw-menu__navigation-icon"><span class="fa  aw-fa-arrow-down"></span></i>
+						</a>
 	                    
-	                    <ul class="aw-menu__item-list">
-							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Vendas</a></li>
-							<li class="aw-menu__item  aw-menu__item--menu-link  is-active"><a href="#">Reembolsos</a></li>
-							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Afiliados</a></li>
-							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Posição de alunos</a></li>
-	                        <li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Layout</a></li>
-	                        <li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">SEO</a></li>
-	                        <li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Cobrança</a></li>
-	                    </ul>
-	                </li>
+						<ul class="aw-menu__item-list">
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="/cadastro-produto.html">Cadastro de produto</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link  is-active"><a href="/pesquisa-produtos.html">Pesquisa de produtos</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="/tabela-sem-dados.html">Tabela sem dados</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="/security/login.html">Login</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="/security/esqueceu-a-senha.html">Esqueceu a senha</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="/errors/403.html">403</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="/errors/404.html">404</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="/errors/500.html">500</a></li>
+						</ul>
+					</li>
 	
-	                <li class="aw-menu__item  aw-menu__item--group">
-	                    <a href="#">
-	                    	<i class="fa  fa-fw  fa-cog"></i><span>Configurações</span>
-	                    	<div class="aw-menu__navigation-icon"><span class="fa  aw-fa-arrow-left"></span></div>
-	                    </a>
-	                </li>
+					<li class="aw-menu__item  aw-menu__item--group">
+						<a href="#">
+							<i class="fa  fa-fw  fa-cog"></i><span>Configurações</span>
+							<i class="aw-menu__navigation-icon"><span class="fa  aw-fa-arrow-left"></span></i>
+						</a>
+					</li>
 	
-	            </ul>
+				</ul>
 			</nav>
     
-    	</div>
-    </div>
+		</div>
+	</div>
 
-	<div class="aw-layout-page__body  js-body">
+	<div class="aw-layout-page__body  js-content">
 
 
 <div class="page-header">
@@ -144,7 +144,7 @@
 		<div class="row">
 			<div class="col-xs-8">
 				<h1>
-					Consulta de produtos
+					Pesquisa de produtos
 				</h1>
 			</div>
 			
@@ -212,7 +212,7 @@
 	
 	<div class="aw-layout-page__footer">
 		<div class="container-fluid">
-			<span class="aw-footer-disclaimer">© 2015 AlgaWorks. Todos os direitos reservados.</span>
+			<span class="aw-footer-disclaimer">© 2016 AlgaWorks. Todos os direitos reservados.</span>
 		</div>
 	</div>
 
@@ -231,53 +231,8 @@
 	</div>
 </div>
 
-
-<script src="assets/javascripts/vendors.min.js"></script>
-<!--<script src="assets/vendor/bower/StickyTableHeaders/js/jquery.stickytableheaders.min.js"></script>-->
-
-
-<script>
-var init;
-
-$(document).ready(function() {
-	if (init) {
-		init();
-	}
-	
-	$('.js-tooltip').tooltip();
-	
-	$('.js-sidebar-toggle').bind('click', function() {
-		$('.js-sidebar').toggleClass('is-toggled');
-		$('.js-body').toggleClass('is-toggled');
-	});
-	
-	$('.js-search-modal-trigger-show').click(function(event) {
-		event.preventDefault();
-		//$( "#book" )
-		$('.js-search-modal').fadeIn('slow');
-		$('body').addClass('aw-no-scroll');
-		
-		$('.js-search-modal-input').val('');
-		$('.js-search-modal-input').select();
-	});
-	
-	$('.js-search-modal-close').click(function(event) {
-		event.preventDefault();
-		$('.js-search-modal').hide();
-		$('body').removeClass('aw-no-scroll');
-	});
-	
-	$('form').submit(function(event) {
-		event.preventDefault();
-		//$('.js-loading').addClass('is-animating');
-		$('.js-loading').css('display', 'table').hide().fadeIn('slow', function() {
-			setTimeout(function() {
-				$('.js-loading').fadeOut('fast');
-			}, 2000);
-		});
-	});
-});
-</script>
+<script src="/assets/javascripts/vendors.min.js"></script>
+<script src="/assets/javascripts/algaworks.min.js"></script>
 
 </body>
 </html>

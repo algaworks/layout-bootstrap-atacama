@@ -186,10 +186,10 @@
 }
 .aw-footer-disclaimer {
   font-size: 92%;
-  color: #777777;
+  display: block;
   line-height: 4;
   text-align: center;
-  display: block;
+  color: #777777;
 }
 .aw-logged-user {
   display: block;
@@ -507,6 +507,9 @@ body {
 }
 .aw-btn-full-width {
   width: 100%;
+}
+.aw-table-header-solid {
+  background: #fff;
 }
 .aw-table-checkbox {
   text-align: center;

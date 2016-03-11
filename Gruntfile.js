@@ -26,7 +26,8 @@ module.exports = function(grunt) {
       'vendors-scripts': {
         src: ["dist/assets/vendors/jquery/jquery.js", 
               "dist/assets/vendors/bootstrap/bootstrap.js",
-              "dist/assets/vendors/sweetalert/sweetalert-dev.js"],
+              "dist/assets/vendors/sweetalert/sweetalert-dev.js",
+              "dist/assets/vendors/stickytableheaders/jquery.stickytableheaders.js"],
         dest: "dist/assets/javascripts/vendors.js"
       }
     },
@@ -47,6 +48,11 @@ module.exports = function(grunt) {
       vendors: {
         files: {
           'dist/assets/javascripts/vendors.min.js': ['dist/assets/javascripts/vendors.js']
+        }
+      },
+      algaworks: {
+        files: {
+          'dist/assets/javascripts/algaworks.min.js': ['dist/assets/javascripts/algaworks.js']
         }
       }
     },
@@ -77,6 +83,12 @@ module.exports = function(grunt) {
     },
 
     copy: {
+      'javascripts': {
+        expand: true,
+        cwd: "sources/javascripts",
+        src: ["algaworks.js"],
+        dest: "dist/assets/javascripts/",
+      },
       fonts: {
         expand: true,
         cwd: "assets/vendors/bower/",
@@ -88,6 +100,12 @@ module.exports = function(grunt) {
         cwd: "assets/vendors/bower/sweetalert/dist/",
         src: ["sweetalert-dev.js", "sweetalert.css"],
         dest: "dist/assets/vendors/sweetalert/",
+      },
+      stickytableheaders: {
+        expand: true,
+        cwd: "assets/vendors/bower/StickyTableHeaders/js/",
+        src: ["jquery.stickytableheaders.js"],
+        dest: "dist/assets/vendors/stickytableheaders/",
       },
       jquery: {
         expand: true,
@@ -111,8 +129,22 @@ module.exports = function(grunt) {
 
     watch: {
       less: {
-        files: ["sources/less/**/*.less", "sources/html/**/*.html"],
-        tasks: ["less:algaworks", "includes"],
+        files: ["sources/less/**/*.less"],
+        tasks: ["less:algaworks"],
+        options: {
+          nospawn: true
+        }
+      },
+      html: {
+        files: ["sources/html/**/*.html"],
+        tasks: ["includes"],
+        options: {
+          nospawn: true
+        }
+      },
+      javascript: {
+        files: ["sources/javascripts/**/*.js"],
+        tasks: ["copy:javascripts", "uglify:algaworks"],
         options: {
           nospawn: true
         }
