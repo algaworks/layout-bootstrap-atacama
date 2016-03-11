@@ -1,0 +1,74 @@
+include "templates/default/cabecalho.html"
+
+<div class="page-header">
+	<div class="container-fluid">
+		<h1>
+			Cadastro de produto
+		</h1>
+	</div>
+</div>
+
+<div class="container-fluid">
+
+	<div class="alert alert-danger alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<i class="fa fa-exclamation-circle"></i> Já existe um produto com o nome informado.
+	</div>
+
+	<form method="get" class="form-vertical">
+		
+		<div class="form-group">
+			<label for="input-produto-nome">Nome</label>
+			<input id="input-produto-nome" type="text" class="form-control">
+		</div>
+
+		<div class="form-group">
+			<label for="input-produto-descricao">Descrição</label>
+			<textarea id="input-produto-descricao" rows="3" class="form-control"></textarea>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="input-produto-preco">Preço unitário</label>
+					<input id="input-produto-preco" type="text" class="form-control" placeholder="R$">
+				</div>
+			</div>
+			
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="input-produto-estoque">Estoque</label>
+					<input id="input-produto-estoque" type="text" class="form-control" placeholder="Unidades">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<button class="btn btn-primary" type="submit">Salvar</button>
+			<a href="pesquisa-produto.html" class="btn btn-default">Cancelar</a>
+			<a href="#" class="btn btn-link aw-btn-link-danger" onclick="excluir()">Excluir este produto</a>
+		</div>
+
+	</form>
+</div>
+
+<script>
+function excluir() {
+	swal({
+		title: "Tem certeza?",
+		text: "Você não poderá recuperar o produto após a exclusão.",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "Sim, exclua agora!",
+		closeOnConfirm: false,
+		showLoaderOnConfirm: true
+	}, function() {
+		setTimeout(function() {
+			swal("Excluído!", "O produto foi excluído com sucesso.", "success");
+		}, 2000);
+	});
+}
+</script>
+
+include "templates/default/rodape.html"

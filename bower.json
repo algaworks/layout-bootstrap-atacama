@@ -1,0 +1,16 @@
+{
+  "name": "site-algaworks",
+  "version": "1.0.0",
+  "authors": [
+    "AlgaWorks <contato@algaworks.com>"
+  ],
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.3.0",
+    "StickyTableHeaders": "~0.1.15",
+    "sweetalert": "~1.1.3",
+    "awesome-bootstrap-checkbox": "~0.3.5",
+    "jquery": "~2.2.1"
+  }
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>layout</title>
+
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/vendors.bundle.css">
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/layout.css">
+	<link rel="stylesheet" href="/assets/vendors/sweetalert/sweetalert.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<div class="aw-layout-loading  js-loading">
+	<div class="aw-layout-loading__container">
+		
+		<span class="aw-balls-spinner">
+			Carregando...
+		</span>
+		
+	</div>
+</div>
+	
+<div class="aw-layout-page">
+	
+	<nav class="navbar  navbar-fixed-top  navbar-default" id="main-navbar">
+		<div class="container-fluid">
+	
+			<div class="navbar-header">
+     			<a class="navbar-brand  hidden-xs" href="#">
+       				<img alt="AlgaWorks" src="/assets/images/logo.png">
+     			</a>
+
+				<ul class="nav  navbar-nav">
+					<li>
+						<a href="#" class="js-sidebar-toggle"><i class="fa  fa-bars"></i></a>
+					</li>
+				</ul>
+	   		</div>
+	
+			<ul class="nav navbar-nav  navbar-right">
+			
+				<li>
+					<a href="#" class="js-search-modal-trigger-show"><i class="fa  fa-search"></i></a>
+				</li>
+				
+				<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa  fa-envelope"></i> <span class="label  label-danger  aw-label-corner">48</span>
+                    </a>
+                    
+					<ul class="dropdown-menu">
+						<li><a href="javascript:;">teste</a></li>
+					</ul>
+				</li>
+				
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-user"></i>
+					</a>
+					
+					<ul class="dropdown-menu">
+						<li>
+							<div class="aw-logged-user">
+								<img src="http://www.gravatar.com/avatar/4c1b897012cc44834d24dfddc2a5d853?s=80&d=mm" 
+									width="80" height="80" alt="Thiago Faria" class="aw-logged-user__picture" />
+								<span class="aw-logged-user__name">Thiago Faria</span>
+							</div>
+						</li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Meu perfil</a></li>
+						<li><a href="#">Alterar senha</a></li>
+						<li><a href="#">Pagamentos</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#"><em class="fa  fa-sign-out"></em></a>
+				</li>
+					
+			</ul>
+	
+		</div>
+	</nav>
+
+	<div class="aw-layout-page__sidebar  js-sidebar">
+		<div class="aw-layout-page__sidebar-content">
+
+        	<nav class="aw-menu">
+	            <ul class="aw-menu__item-list">
+	
+	                <li class="aw-menu__item  aw-menu__item--group">
+	                    <a href="#"><i class="fa fa-fw fa-home"></i><span>Dashboard</span></a>
+	                </li>
+	                <li class="aw-menu__item  aw-menu__item--group">
+	                    <a href="#"><i class="fa fa-fw fa-user"></i><span>Contatos</span> </a>
+	                </li>
+	
+	                <li class="aw-menu__item  aw-menu__item--group  is-expanded">
+	                    <a href="#">
+	                    	<i class="fa  fa-fw  fa-file-text"></i><span>Relatórios</span>
+	                    	<div class="aw-menu__navigation-icon"><span class="fa  aw-fa-arrow-down"></span></div>
+	                    </a>
+	                    
+	                    <ul class="aw-menu__item-list">
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Vendas</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link  is-active"><a href="#">Reembolsos</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Afiliados</a></li>
+							<li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Posição de alunos</a></li>
+	                        <li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Layout</a></li>
+	                        <li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">SEO</a></li>
+	                        <li class="aw-menu__item  aw-menu__item--menu-link"><a href="#">Cobrança</a></li>
+	                    </ul>
+	                </li>
+	
+	                <li class="aw-menu__item  aw-menu__item--group">
+	                    <a href="#">
+	                    	<i class="fa  fa-fw  fa-cog"></i><span>Configurações</span>
+	                    	<div class="aw-menu__navigation-icon"><span class="fa  aw-fa-arrow-left"></span></div>
+	                    </a>
+	                </li>
+	
+	            </ul>
+			</nav>
+    
+    	</div>
+    </div>
+
+	<div class="aw-layout-page__body  js-body">
+
+
+<div class="page-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-8">
+				<h1>
+					Consulta de produtos
+				</h1>
+			</div>
+			
+			<div class="col-xs-4">
+				<div class="aw-page-header-controls">
+					<a class="btn btn-primary" href="cadastro-produto.html">
+						<i class="fa fa-plus-circle"></i> <span class="hidden-xs  hidden-sm">Novo produto</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+
+	<form method="get" class="form-vertical">
+		
+		<div class="form-group">
+			<label for="input-produto-nome">Nome</label>
+			<input id="input-produto-nome" type="text" class="form-control">
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="input-produto-preco">Preço unitário</label>
+					
+					<div class="form-inline">
+						<input type="text" class="form-control aw-form-control-inline-sm" placeholder="R$">
+						<label class="aw-form-label-between">até</label>
+						<input type="text" class="form-control aw-form-control-inline-sm" placeholder="R$">
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="input-produto-estoque">Estoque</label>
+					
+					<div class="form-inline">
+						<input type="text" class="form-control aw-form-control-inline-sm">
+						<label class="aw-form-label-between">até</label>
+						<input type="text" class="form-control aw-form-control-inline-sm">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<button class="btn btn-primary" type="submit">
+				Pesquisar
+			</button>
+		</div>
+
+	</form>
+
+	<div class="alert  aw-alert-no-results" role="alert">
+		A pesquisa não retornou nenhum produto.
+	</div>
+	
+</div>
+
+	</div>
+	
+	<div class="aw-layout-page__footer">
+		<div class="container-fluid">
+			<span class="aw-footer-disclaimer">© 2015 AlgaWorks. Todos os direitos reservados.</span>
+		</div>
+	</div>
+
+</div>
+
+<div class="aw-search-modal  js-search-modal">
+	<form action="#" class="aw-search-modal__form">
+		<input class="aw-search-modal__input  js-search-modal-input" text="text" placeholder="O que você está procurando?">
+		<div class="aw-search-modal__input-icon">
+			<i class="glyphicon glyphicon-search  js-search-modal-go"></i>
+		</div>
+	</form>
+	
+	<div class="aw-search-modal__controls">
+		<i class="glyphicon glyphicon-remove  js-search-modal-close"></i>
+	</div>
+</div>
+
+
+<script src="assets/vendors/jquery/jquery.min.js"></script>
+<script src="assets/vendors/sweetalert/sweetalert.min.js"></script>
+<script src="assets/vendors/bootstrap/bootstrap.min.js"></script>
+<!--<script src="assets/vendor/bower/StickyTableHeaders/js/jquery.stickytableheaders.min.js"></script>-->
+
+
+<script>
+var init;
+
+$(document).ready(function() {
+	if (init) {
+		init();
+	}
+	
+	$('.js-tooltip').tooltip();
+	
+	$('.js-sidebar-toggle').bind('click', function() {
+		$('.js-sidebar').toggleClass('is-toggled');
+		$('.js-body').toggleClass('is-toggled');
+	});
+	
+	$('.js-search-modal-trigger-show').click(function(event) {
+		event.preventDefault();
+		//$( "#book" )
+		$('.js-search-modal').fadeIn('slow');
+		$('body').addClass('aw-no-scroll');
+		
+		$('.js-search-modal-input').val('');
+		$('.js-search-modal-input').select();
+	});
+	
+	$('.js-search-modal-close').click(function(event) {
+		event.preventDefault();
+		$('.js-search-modal').hide();
+		$('body').removeClass('aw-no-scroll');
+	});
+	
+	$('form').submit(function(event) {
+		event.preventDefault();
+		//$('.js-loading').addClass('is-animating');
+		$('.js-loading').css('display', 'table').hide().fadeIn('slow', function() {
+			setTimeout(function() {
+				$('.js-loading').fadeOut('fast');
+			}, 2000);
+		});
+	});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+// #####################
+// # Font Awesome
+// #####################
+@fa-font-path: "../vendors/font-awesome/fonts";
+
+
+// #####################
+// # Common colors
+// #####################
+
+// Primary color for the project
+@brand-primary: #1e94d2;
+
+
+// #####################
+// # Common borders
+// #####################
+@border-radius-base: 2px;
+@border-radius-large: 4px;
+@border-radius-small: 1px;
+
+// #####################
+// # Common typography
+// #####################
+@font-size-base: 13px;
+
+@font-size-h1: floor((@font-size-base * 1.7)); // ~22px
+@font-size-h2: floor((@font-size-base * 1.6)); // ~20px
+@font-size-h3: ceil((@font-size-base * 1.38)); // ~18px
+@font-size-h4: ceil((@font-size-base * 1.23)); // 16px
+@font-size-h5: ceil((@font-size-base * 1.07)); // ~14px
+@font-size-h6: @font-size-base; // 13px
+
+@icon-font-path: "../vendors/bootstrap/fonts/";
+
+
+// #####################
+// # Layout - Simple Page
+// #####################
+
+// Background color for simple pages, like login, 404, 500, etc
+@aw-layout-simple-page-bg: #f6f6f6;
+
+
+// #####################
+// # Error panel
+// #####################
+@aw-error-panel-default-color: @gray-light;
+@aw-error-panel-code-color: lighten(@gray-base, 85%);
+@aw-error-panel-code-font-size: floor((@font-size-base * 6.2)); // ~80px
+@aw-error-panel-title-font-size: floor((@font-size-base * 2.5)); // ~32px
+
+
+// #####################
+// # Balls spinner
+// #####################
+@aw-balls-spinner-one-bg: @brand-primary;
+@aw-balls-spinner-two-bg: lighten(@brand-primary, 30%);
+@aw-balls-spinner-three-bg: darken(@brand-primary, 10%);
+@aw-balls-spinner-ball-size: 65px;
+
+
+// #####################
+// # Navbar
+// #####################
+
+// Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint: 0;
+
+// Background color for navbar
+@navbar-default-bg: @brand-primary;
+
+// Navbar links
+@navbar-default-link-color: #fff;
+@navbar-default-link-hover-color: darken(@brand-primary, 15%);
+@navbar-default-link-active-color: darken(@brand-primary, 25%);
+
+
+// #####################
+// # Footer disclaimer
+// #####################
+@aw-footer-disclaimer-color: @gray-light;
+
+
+// #####################
+// # Logged user
+// #####################
+@aw-logged-user-border-color: lighten(@gray, 50%);
+
+
+// #####################
+// # Search modal
+// #####################
+@aw-search-modal-bg: @brand-primary;
+@aw-search-modal-input-bg: lighten(@brand-primary, 5%);
+@aw-search-modal-placeholder-color: lighten(@brand-primary, 25%);
+@aw-search-modal-icon-color: darken(@brand-primary, 20%);
+@aw-search-modal-icon-hover-color: darken(@brand-primary, 30%);
+
+
+// #####################
+// # Pagination
+// #####################
+@aw-pagination-info-color: @gray-light;
+
+
+// #####################
+// # Page header
+// #####################
+@aw-page-header-height: 80px;
+@aw-page-header-bgcolor: #fafbfd;
+@aw-page-header-title-color: @gray-dark;
+
+
+// #####################
+// # Side bar
+// #####################
+@aw-sidebar-width: 210px;
+@aw-sidebar-bg: #f6f6f6;
+@aw-sidebar-border-color: darken(@aw-sidebar-bg, 8%);
+
+
+// #####################
+// # Side menu
+// #####################
+@aw-menu-item-color: lighten(#000, 10%);
+@aw-menu-item-hover-bg: @gray-lighter;
+@aw-menu-item-active-color: @brand-primary;
+@aw-menu-group-expanded-border-left-color: @brand-primary;
+@aw-menu-group-expanded-menu-links-bg: lighten(#f7f7f7, 1%);
+@aw-menu-group-expanded-bg: darken(#f7f7f7, 1%);
+
+
+// #####################
+// # Button
+// #####################
+@btn-primary-border: darken(@btn-primary-bg, 3%);
+
+// Custom
+@aw-btn-cancel-color: #fff;
+@aw-btn-cancel-bg: #a1a1a1;
+@aw-btn-cancel-border: darken(@aw-btn-cancel-bg, 5%);
+@aw-btn-danger-link-color: @brand-danger;
+
+
+// #####################
+// # Alert
+// #####################
+@aw-alert-no-results-bg: #f9f9f9;
+@aw-alert-no-results-border: darken(@aw-alert-no-results-bg, 3%);
+@aw-alert-no-results-text: darken(@aw-alert-no-results-bg, 50%);
+
+
+// #####################
+// # Simple form
+// #####################
+@aw-simple-panel-default-color: @gray-light;
+@aw-simple-panel-error-color: #e70500;
+
+
+// #####################
+// # Data table toolbar
+// #####################
+@aw-datatable-toolbar-margin-bottom: ceil(@form-group-margin-bottom * 0.66);
+@aw-datatable-toolbar-margin-top: @form-group-margin-bottom * 2;

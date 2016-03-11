@@ -1,0 +1,75 @@
+	</div>
+	
+	<div class="aw-layout-page__footer">
+		<div class="container-fluid">
+			<span class="aw-footer-disclaimer">© 2015 AlgaWorks. Todos os direitos reservados.</span>
+		</div>
+	</div>
+
+</div>
+
+<div class="aw-search-modal  js-search-modal">
+	<form action="#" class="aw-search-modal__form">
+		<input class="aw-search-modal__input  js-search-modal-input" text="text" placeholder="O que você está procurando?">
+		<div class="aw-search-modal__input-icon">
+			<i class="glyphicon glyphicon-search  js-search-modal-go"></i>
+		</div>
+	</form>
+	
+	<div class="aw-search-modal__controls">
+		<i class="glyphicon glyphicon-remove  js-search-modal-close"></i>
+	</div>
+</div>
+
+
+<script src="assets/vendors/jquery/jquery.min.js"></script>
+<script src="assets/vendors/sweetalert/sweetalert.min.js"></script>
+<script src="assets/vendors/bootstrap/bootstrap.min.js"></script>
+<!--<script src="assets/vendor/bower/StickyTableHeaders/js/jquery.stickytableheaders.min.js"></script>-->
+
+
+<script>
+var init;
+
+$(document).ready(function() {
+	if (init) {
+		init();
+	}
+	
+	$('.js-tooltip').tooltip();
+	
+	$('.js-sidebar-toggle').bind('click', function() {
+		$('.js-sidebar').toggleClass('is-toggled');
+		$('.js-body').toggleClass('is-toggled');
+	});
+	
+	$('.js-search-modal-trigger-show').click(function(event) {
+		event.preventDefault();
+		//$( "#book" )
+		$('.js-search-modal').fadeIn('slow');
+		$('body').addClass('aw-no-scroll');
+		
+		$('.js-search-modal-input').val('');
+		$('.js-search-modal-input').select();
+	});
+	
+	$('.js-search-modal-close').click(function(event) {
+		event.preventDefault();
+		$('.js-search-modal').hide();
+		$('body').removeClass('aw-no-scroll');
+	});
+	
+	$('form').submit(function(event) {
+		event.preventDefault();
+		//$('.js-loading').addClass('is-animating');
+		$('.js-loading').css('display', 'table').hide().fadeIn('slow', function() {
+			setTimeout(function() {
+				$('.js-loading').fadeOut('fast');
+			}, 2000);
+		});
+	});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+// ###############
+// # Search Modal
+// # Full width/height modal for searching
+// ###############
+
+.aw-search-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 0;
+  padding-top: 25%;
+
+	text-align: center;	
+	font-size: 18px;
+
+  background-color: @aw-search-modal-bg;
+
+	@media (min-width: @screen-sm-min) {
+		padding-left: 10%;
+		padding-right: 10%;
+		padding-top: 180px;
+
+    font-size: 26px;
+	}
+
+	&.is-shown {
+		display: block;
+	}
+}
+
+.aw-search-modal__form {
+	position: relative;
+}
+
+.aw-search-modal__input {
+  display: block;
+	width: 100%;
+  height: 104px;
+	padding-left: 40px;
+	padding-right: (52px + 40px);
+  line-height: 104px;
+
+  border-radius: @input-border-radius;
+  border: none;
+  outline: none;
+
+  text-align: center; 
+	color: #fff;
+  background-color: @aw-search-modal-input-bg;
+
+	.placeholder(@aw-search-modal-placeholder-color);
+}
+
+.aw-search-modal__input-icon {
+	display: block;
+	position: absolute;
+  width: 52px;
+  height: 104px; // 4x font-size
+  line-height: 104px;
+  top: 0;
+  right: 20px;
+  z-index: 2;
+
+  text-align: center;
+  color: @aw-search-modal-icon-color;
+
+  .aw-search-modal-clickable-icon();  
+}
+
+.aw-search-modal__controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+	font-size: 26px;
+	color: @aw-search-modal-icon-color;
+
+	.aw-search-modal-clickable-icon();
+}
+
+.aw-search-modal-clickable-icon(@color: @aw-search-modal-icon-hover-color) {
+  i {
+    pointer-events: auto;
+    cursor: pointer;
+
+    &:hover {
+      color: @color;
+    }	
+  }
+}
