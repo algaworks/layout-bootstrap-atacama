@@ -1,4 +1,4 @@
-var AW = {};
+var AW = AW || {};
 
 AW.onToggleSidebarRequest = function() {
   event.preventDefault();
