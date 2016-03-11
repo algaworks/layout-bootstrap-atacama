@@ -1,14 +1,52 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     less: {
-      layout: {
+      algaworks: {
         files: {
-          "dist/assets/stylesheets/layout.css": "sources/less/layout.less"
+          "dist/assets/stylesheets/algaworks.css": "sources/less/algaworks.less"
         }
       },
-      vendor: {
+      application: {
         files: {
-          "dist/assets/stylesheets/vendors.bundle.css": "sources/less/vendors.less"
+          "dist/assets/stylesheets/application.css": "sources/less/application.less"
+        }
+      },
+      vendors: {
+        files: {
+          "dist/assets/stylesheets/vendors.css": "sources/less/vendors.less"
+        }
+      }
+    },
+
+    concat: {
+      'vendors-css': {
+        src: ["dist/assets/stylesheets/vendors.css", "dist/assets/vendors/sweetalert/*.css"],
+        dest: "dist/assets/stylesheets/vendors.css"
+      },
+      'vendors-scripts': {
+        src: ["dist/assets/vendors/jquery/jquery.js", 
+              "dist/assets/vendors/bootstrap/bootstrap.js",
+              "dist/assets/vendors/sweetalert/sweetalert-dev.js"],
+        dest: "dist/assets/javascripts/vendors.js"
+      }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: "dist/assets/stylesheets",
+          src: ["*.css", "!*.min.css", "!application.css"],
+          dest: "dist/assets/stylesheets",
+          ext: ".min.css"
+        }]
+      }
+    },
+
+    uglify: {
+      vendors: {
+        files: {
+          'dist/assets/javascripts/vendors.min.js': ['dist/assets/javascripts/vendors.js']
         }
       }
     },
@@ -48,19 +86,19 @@ module.exports = function(grunt) {
       sweetalert: {
         expand: true,
         cwd: "assets/vendors/bower/sweetalert/dist/",
-        src: ["sweetalert.min.js", "sweetalert.css"],
+        src: ["sweetalert-dev.js", "sweetalert.css"],
         dest: "dist/assets/vendors/sweetalert/",
       },
       jquery: {
         expand: true,
         cwd: "assets/vendors/bower/jquery/dist/",
-        src: ["jquery.min.js"],
+        src: ["jquery.js"],
         dest: "dist/assets/vendors/jquery/",
       },
       bootstrap: {
         expand: true,
         cwd: "assets/vendors/bower/bootstrap/dist/js/",
-        src: ["bootstrap.min.js"],
+        src: ["bootstrap.js"],
         dest: "dist/assets/vendors/bootstrap/",
       },
       images: {
@@ -74,7 +112,7 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: ["sources/less/**/*.less", "sources/html/**/*.html"],
-        tasks: ["less:layout", "includes"],
+        tasks: ["less:algaworks", "includes"],
         options: {
           nospawn: true
         }
@@ -82,9 +120,11 @@ module.exports = function(grunt) {
     }
   });
 
-  ["contrib-less", "contrib-watch", "contrib-copy", "includes", "http-server"].forEach(function(plugin) {
+  ["contrib-less", "contrib-watch", "contrib-copy", "contrib-cssmin", "contrib-uglify",
+      "contrib-concat", "includes", "http-server"].forEach(function(plugin) {
     grunt.loadNpmTasks("grunt-" + plugin);
   });
 
-  grunt.registerTask("default", ["http-server", "copy", "less", "includes", "watch"]);
+  grunt.registerTask("default", ["http-server", "copy", "less", "concat", "uglify", 
+    "cssmin", "includes", "watch"]);
 };
