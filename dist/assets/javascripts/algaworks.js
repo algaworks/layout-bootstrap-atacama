@@ -1,6 +1,6 @@
 var AW = AW || {};
 
-AW.onToggleSidebarRequest = function() {
+AW.onSidebarToggleRequest = function() {
   event.preventDefault();
   $(this).blur();
 
@@ -25,14 +25,22 @@ AW.onSearchModalCloseRequest = function(event) {
   $('body').removeClass('aw-no-scroll');
 };
 
-AW.onFormSubmit = function(event) {
-  event.preventDefault();
+AW.onFormLoadingSubmit = function(event) {
+  //event.preventDefault();
 
-  $('.js-loading').css('display', 'table').hide().fadeIn('slow', function() {
-    setTimeout(function() {
-      $('.js-loading').fadeOut('fast');
-    }, 2000);
-  });
+  AW.showLoadingComponent();
+
+  //setTimeout(function() {
+  //  AW.hideLoadingComponent();
+  //}, 2000);
+};
+
+AW.showLoadingComponent = function() {
+  $('.js-loading-component').css('display', 'table').hide().fadeIn('slow');
+};
+
+AW.hideLoadingComponent = function() {
+  $('.js-loading-component').fadeOut('fast');
 };
 
 AW.initStickyTableHeaders = function() {
@@ -57,8 +65,8 @@ $(function() {
   $('.js-tooltip').tooltip();
   
   // Bind events
-  $('.js-sidebar-toggle').bind('click', AW.onToggleSidebarRequest);
+  $('.js-sidebar-toggle').bind('click', AW.onSidebarToggleRequest);
   $('.js-search-modal-trigger-show').bind('click', AW.onSearchModalShowRequest);
   $('.js-search-modal-close').bind('click', AW.onSearchModalCloseRequest);
-  $('form').bind('submit', AW.onFormSubmit);
+  $('.js-form-loading').bind('submit', AW.onFormLoadingSubmit);
 });
