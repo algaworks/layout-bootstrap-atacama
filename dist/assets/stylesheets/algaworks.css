@@ -32,6 +32,11 @@
   transition: all 0.5s;
 }
 @media (min-width: 992px) {
+  .aw-layout-page__footer.is-toggled {
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
   .aw-layout-page__footer {
     margin-left: 210px;
   }
@@ -535,4 +540,8 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+.aw-login-forgot-password {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
