@@ -4,8 +4,7 @@ AW.onSidebarToggleRequest = function() {
   event.preventDefault();
   $(this).blur();
 
-  $('.js-sidebar').toggleClass('is-toggled');
-  $('.js-content').toggleClass('is-toggled');
+  $('.js-sidebar, .js-content').toggleClass('is-toggled');
 };
 
 AW.onSearchModalShowRequest = function(event) {
@@ -14,8 +13,8 @@ AW.onSearchModalShowRequest = function(event) {
   $('.js-search-modal').fadeIn('slow');
   $('body').addClass('aw-no-scroll');
   
-  $('.js-search-modal-input').val('');
-  $('.js-search-modal-input').select();
+  $('.js-search-modal-input').val('').select();
+  
 };
 
 AW.onSearchModalCloseRequest = function(event) {
@@ -25,18 +24,18 @@ AW.onSearchModalCloseRequest = function(event) {
   $('body').removeClass('aw-no-scroll');
 };
 
-AW.onFormLoadingSubmit = function(event) {
+//AW.onFormLoadingSubmit = function(event) {
   //event.preventDefault();
 
-  AW.showLoadingComponent();
+  //AW.showLoadingComponent();
 
   //setTimeout(function() {
   //  AW.hideLoadingComponent();
   //}, 2000);
-};
+//};
 
 AW.showLoadingComponent = function() {
-  $('.js-loading-component').css('display', 'table').hide().fadeIn('slow');
+  $('.js-loading-overlay').css('display', 'table').hide().fadeIn('slow');
 };
 
 AW.hideLoadingComponent = function() {
@@ -54,11 +53,25 @@ AW.initStickyTableHeaders = function() {
   }
 };
 
+AW.onMenuGroupClick = function(event) {
+  var subItems = $(this).parent().find('ul');
+
+  if (subItems.length) {
+    event.preventDefault();
+    $(this).parent().toggleClass('is-expanded');
+  }
+};
+
+AW.initMenu = function() {
+  $('.js-menu > ul > li > a').bind('click', AW.onMenuGroupClick);
+};
+
 $(function() {
   if (AW.init) {
     AW.init();
   }
 
+  AW.initMenu();
   AW.initStickyTableHeaders();
   
   // Enable Bootstrap tooltip
@@ -68,5 +81,5 @@ $(function() {
   $('.js-sidebar-toggle').bind('click', AW.onSidebarToggleRequest);
   $('.js-search-modal-trigger-show').bind('click', AW.onSearchModalShowRequest);
   $('.js-search-modal-close').bind('click', AW.onSearchModalCloseRequest);
-  $('.js-form-loading').bind('submit', AW.onFormLoadingSubmit);
+  //$('.js-form-loading').bind('submit', AW.onFormLoadingSubmit);
 });
