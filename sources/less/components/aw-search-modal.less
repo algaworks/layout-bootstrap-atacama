@@ -1,23 +1,23 @@
-// ###############
-// # Search Modal
-// # Full width/height modal for searching
-// ###############
+/*--------------*\
+  Search modal
+\*--------------*/
 
 .aw-search-modal {
-  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: 9999;
+
+  display: none;
   padding: 0;
   padding-top: 25%;
 
+  background-color: @aw-search-modal-bg;
+
 	text-align: center;	
 	font-size: 18px;
-
-  background-color: @aw-search-modal-bg;
 
 	@media (min-width: @screen-sm-min) {
 		padding-left: 10%;
@@ -42,31 +42,35 @@
   height: 104px;
 	padding-left: 40px;
 	padding-right: (52px + 40px);
-  line-height: 104px;
-
   border-radius: @input-border-radius;
   border: none;
-  outline: none;
 
-  text-align: center; 
-	color: #fff;
+  color: #fff;
   background-color: @aw-search-modal-input-bg;
+
+  line-height: 104px;
+  text-align: center; 
+
+  outline: none;
 
 	.placeholder(@aw-search-modal-placeholder-color);
 }
 
 .aw-search-modal__input-icon {
+  position: absolute;
+
 	display: block;
-	position: absolute;
   width: 52px;
   height: 104px; // 4x font-size
-  line-height: 104px;
   top: 0;
   right: 20px;
   z-index: 2;
 
-  text-align: center;
+
   color: @aw-search-modal-icon-color;
+
+  line-height: 104px;
+  text-align: center;
 
   .aw-search-modal-clickable-icon();  
 }
@@ -76,8 +80,9 @@
   top: 20px;
   right: 20px;
 
+  color: @aw-search-modal-icon-color;
+
 	font-size: 26px;
-	color: @aw-search-modal-icon-color;
 
 	.aw-search-modal-clickable-icon();
 }

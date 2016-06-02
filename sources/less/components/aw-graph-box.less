@@ -1,6 +1,10 @@
+/*-------------------------------------------------*\
+  Graph box
+  - Container para gráfico (dashboard)
+\*-------------------------------------------------*/
+
 .aw-graph-box {
   margin-bottom: 15px;
-
   border: 1px solid @aw-graph-box-border-color;
   border-bottom: 3px solid @aw-graph-box-border-color;
 }
@@ -16,13 +20,13 @@
 
 .aw-graph-box__no-data {
   position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
 
@@ -34,8 +38,9 @@
 }
 
 .aw-graph-box__title {
-  font-size: 1.1em;
-  font-weight: 500;
   margin: 0;
   padding: 0;
+
+  font-size: 1.1em;
+  font-weight: 500;
 }

@@ -1,0 +1,18 @@
+.aw-layout-content {
+  position: relative;
+
+  margin: 0;
+  margin-top: @navbar-height;
+
+  transition: all 0.5s;
+
+  &.is-toggled {
+    @media (min-width: @screen-md-min) {
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: @screen-md-min) {
+    margin-left: @aw-sidebar-width;
+  }
+}

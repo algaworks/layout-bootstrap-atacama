@@ -1,0 +1,48 @@
+.aw-layout-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  height: 100%;
+  //width: 0px;
+  padding-top: 54px;
+  margin-left: -(@aw-sidebar-width + 1);
+  border-right-color: @aw-sidebar-border-color;
+  border-right: 1px solid;
+  border-right-color: transparent;
+  overflow-x: hidden;
+
+  background-color: @aw-sidebar-bg;
+
+  transition: all 0.5s;
+
+  @media (min-width: @screen-md-min) {
+    //width: @aw-sidebar-width;
+    //border-right-color: @aw-sidebar-border-color;
+    margin-left: 0px;
+  }
+
+  &.is-toggled {
+    //width: @aw-sidebar-width;
+    //border-right-color: @aw-sidebar-border-color;   
+    margin-left: 0px;
+
+    @media (min-width: @screen-md-min) {
+        //width: 0px;
+        //border-right-color: transparent;
+        margin-left: -(@aw-sidebar-width + 1);
+    }
+  }
+
+}
+
+.aw-layout-sidebar__content {
+    position: relative;
+
+    overflow-y: auto;
+    height: 100%;
+    //width: auto;
+    width: @aw-sidebar-width;
+}

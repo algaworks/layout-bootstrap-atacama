@@ -1,76 +1,76 @@
 .aw-layout-page {
+  position: relative;
   overflow-x: hidden;
   width: 100%;
-  position: relative;
   min-height: 100%;
   padding-bottom: 60px;
 }
-.aw-layout-page__body {
+.aw-layout-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  margin: 0;
+  border-top: 1px solid #eeeeee;
+  transition: all 0.5s;
+}
+@media (min-width: 992px) {
+  .aw-layout-footer.is-toggled {
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  .aw-layout-footer {
+    margin-left: 210px;
+  }
+}
+.aw-layout-content {
   position: relative;
   margin: 0;
   margin-top: 50px;
   transition: all 0.5s;
 }
 @media (min-width: 992px) {
-  .aw-layout-page__body.is-toggled {
+  .aw-layout-content.is-toggled {
     margin-left: 0;
   }
 }
 @media (min-width: 992px) {
-  .aw-layout-page__body {
+  .aw-layout-content {
     margin-left: 210px;
   }
 }
-.aw-layout-page__footer {
-  border-top: 1px solid #eeeeee;
-  height: 50px;
-  margin: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: all 0.5s;
-}
-@media (min-width: 992px) {
-  .aw-layout-page__footer.is-toggled {
-    margin-left: 0;
-  }
-}
-@media (min-width: 992px) {
-  .aw-layout-page__footer {
-    margin-left: 210px;
-  }
-}
-.aw-layout-page__sidebar {
+.aw-layout-sidebar {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  padding-top: 54px;
-  height: 100%;
   z-index: 1000;
-  background-color: #f6f6f6;
-  border-right: 1px solid;
-  border-right-color: transparent;
-  transition: all 0.5s;
-  overflow-x: hidden;
+  height: 100%;
+  padding-top: 54px;
   margin-left: -211px;
   border-right-color: #e2e2e2;
+  border-right: 1px solid;
+  border-right-color: transparent;
+  overflow-x: hidden;
+  background-color: #f6f6f6;
+  transition: all 0.5s;
 }
 @media (min-width: 992px) {
-  .aw-layout-page__sidebar {
+  .aw-layout-sidebar {
     margin-left: 0px;
   }
 }
-.aw-layout-page__sidebar.is-toggled {
+.aw-layout-sidebar.is-toggled {
   margin-left: 0px;
 }
 @media (min-width: 992px) {
-  .aw-layout-page__sidebar.is-toggled {
+  .aw-layout-sidebar.is-toggled {
     margin-left: -211px;
   }
 }
-.aw-layout-page__sidebar-content {
+.aw-layout-sidebar__content {
   position: relative;
   overflow-y: auto;
   height: 100%;
@@ -86,19 +86,22 @@
   padding: 0 10px;
   padding-top: 10%;
 }
-.aw-layout-centered-overlay {
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 65px;
+.aw-layout-loading {
   position: fixed;
   z-index: 9998;
   display: none;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 65px;
+  text-align: center;
 }
-.aw-layout-centered-overlay__container {
+.aw-layout-loading__container {
   display: table-cell;
   vertical-align: middle;
 }
+/*--------------*\
+  Balls Spinner
+\*--------------*/
 @-moz-keyframes aw-balls-spinner {
   0% {
     -moz-transform: rotate(-720deg);
@@ -136,13 +139,13 @@
 /* :not(:required) hides this rule from IE9 and below */
 .aw-balls-spinner:not(:required) {
   position: relative;
-  text-indent: -9999px;
   display: inline-block;
   width: 65px;
   height: 65px;
-  background: #1e94d2;
   opacity: 0.8;
   border-radius: 100%;
+  background: #1e94d2;
+  text-indent: -9999px;
   -moz-animation: aw-balls-spinner 3s infinite ease-in-out;
   -webkit-animation: aw-balls-spinner 3s infinite ease-in-out;
   animation: aw-balls-spinner 3s infinite ease-in-out;
@@ -152,50 +155,63 @@
   transform-origin: 50% 100%;
 }
 .aw-balls-spinner:not(:required)::before {
-  background: #99d2f0;
-  opacity: 0.8;
-  border-radius: 100%;
-  content: '';
   position: absolute;
-  width: 65px;
-  height: 65px;
   top: 48.75px;
   left: -28.145832px;
-}
-.aw-balls-spinner:not(:required)::after {
-  background: #1875a5;
   opacity: 0.8;
   border-radius: 100%;
-  content: '';
-  position: absolute;
   width: 65px;
   height: 65px;
+  background: #99d2f0;
+  content: '';
+}
+.aw-balls-spinner:not(:required)::after {
+  position: absolute;
   top: 48.75px;
   left: 28.145832px;
+  opacity: 0.8;
+  border-radius: 100%;
+  width: 65px;
+  height: 65px;
+  background: #1875a5;
+  content: '';
 }
+/*-----------------------------------------------------------*\
+  Error panel
+  - Para ser usado em páginas de erro simpls (404, 500, etc)
+\*-----------------------------------------------------------*/
 .aw-error-panel {
-  text-align: center;
   color: #777777;
+  text-align: center;
 }
 .aw-error-panel__title {
   font-size: 32px;
 }
 .aw-error-panel__description {
-  padding: 18px 0;
   display: block;
+  padding: 18px 0;
 }
 .aw-error-panel__code {
-  font-size: 80px;
   color: #d9d9d9;
+  font-size: 80px;
   font-weight: normal;
 }
+/*-------------------------------------------------*\
+  Footer disclaimer
+  - Para usar na informação de copyright no rodapé
+\*-------------------------------------------------*/
 .aw-footer-disclaimer {
   font-size: 92%;
   display: block;
+  color: #777777;
   line-height: 4;
   text-align: center;
-  color: #777777;
 }
+/*-------------------------------------------------*\
+  Logged user
+  - Imagem e nome do usuário logado
+    (normalmente usado em dropdown menu na navbar)
+\*-------------------------------------------------*/
 .aw-logged-user {
   display: block;
   padding: 20px;
@@ -214,19 +230,22 @@
   font-weight: 500;
   text-align: center;
 }
+/*--------------*\
+  Search modal
+\*--------------*/
 .aw-search-modal {
-  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: 9999;
+  display: none;
   padding: 0;
   padding-top: 25%;
+  background-color: #1e94d2;
   text-align: center;
   font-size: 18px;
-  background-color: #1e94d2;
 }
 @media (min-width: 768px) {
   .aw-search-modal {
@@ -248,13 +267,13 @@
   height: 104px;
   padding-left: 40px;
   padding-right: 92px;
-  line-height: 104px;
   border-radius: 2px;
   border: none;
-  outline: none;
-  text-align: center;
   color: #fff;
   background-color: #29a1e0;
+  line-height: 104px;
+  text-align: center;
+  outline: none;
 }
 .aw-search-modal__input::-moz-placeholder {
   color: #82c8ed;
@@ -267,16 +286,16 @@
   color: #82c8ed;
 }
 .aw-search-modal__input-icon {
-  display: block;
   position: absolute;
+  display: block;
   width: 52px;
   height: 104px;
-  line-height: 104px;
   top: 0;
   right: 20px;
   z-index: 2;
-  text-align: center;
   color: #115579;
+  line-height: 104px;
+  text-align: center;
 }
 .aw-search-modal__input-icon i {
   pointer-events: auto;
@@ -289,8 +308,8 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 26px;
   color: #115579;
+  font-size: 26px;
 }
 .aw-search-modal__controls i {
   pointer-events: auto;
@@ -299,9 +318,13 @@
 .aw-search-modal__controls i:hover {
   color: #0b364c;
 }
+/*---------------------------------------*\
+  Simple panel
+  - Usado para login e "esqueci a senha"
+\*---------------------------------------*/
 .aw-simple-panel {
-  text-align: center;
   color: #777777;
+  text-align: center;
 }
 .aw-simple-panel__message {
   padding: 20px 0px;
@@ -319,6 +342,9 @@
 .aw-simple-panel__footer {
   padding: 10px 0;
 }
+/*---------*\
+  Menu
+\*---------*/
 .aw-menu__list {
   margin-bottom: 0;
   padding-left: 0;
@@ -332,27 +358,27 @@
   display: block;
 }
 .aw-menu__item > a {
-  color: #1a1a1a;
-  font-weight: 500;
   position: relative;
   display: block;
   padding: 10px 15px;
+  color: #1a1a1a;
+  font-weight: 500;
 }
 .aw-menu__item > a > i {
   margin-right: 6px;
 }
 .aw-menu__item > a:hover,
 .aw-menu__item > a:focus {
-  text-decoration: none;
   background: #eeeeee;
+  text-decoration: none;
 }
 .aw-menu__item.is-active > a {
   color: #1e94d2;
 }
 .aw-menu__item.is-expanded {
-  background: #f4f4f4;
   border-left: 3px solid;
   border-left-color: #1e94d2;
+  background: #f4f4f4;
 }
 .aw-menu__item.is-expanded .aw-menu__navigation-icon:before {
   content: "\f0d7";
@@ -374,6 +400,10 @@
 .aw-menu__navigation-icon:before {
   content: "\f0d9";
 }
+/*------------------------------------------*\
+  Box
+  - Para ser usado em indicadores (dahboard)
+\*------------------------------------------*/
 .aw-box {
   padding: 20px;
   margin-bottom: 15px;
@@ -390,11 +420,15 @@
   text-align: right;
 }
 .aw-box__title {
-  font-size: 1em;
   display: block;
+  font-size: 1em;
   font-weight: 600;
   text-align: right;
 }
+/*-------------------------------------------------*\
+  Graph box
+  - Container para gráfico (dashboard)
+\*-------------------------------------------------*/
 .aw-graph-box {
   margin-bottom: 15px;
   border: 1px solid #eeeeee;
@@ -409,12 +443,12 @@
 }
 .aw-graph-box__no-data {
   position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   color: #777777;
@@ -423,10 +457,10 @@
   margin-right: 5px;
 }
 .aw-graph-box__title {
-  font-size: 1.1em;
-  font-weight: 500;
   margin: 0;
   padding: 0;
+  font-size: 1.1em;
+  font-weight: 500;
 }
 .aw-text-xs-left {
   text-align: left;
@@ -578,8 +612,8 @@ body {
   background: #fff;
 }
 .aw-table-checkbox {
-  text-align: center;
   min-width: 25px;
+  text-align: center;
 }
 .pagination {
   margin: 0px;
@@ -589,18 +623,18 @@ body {
   background-color: #fafbfd;
 }
 .page-header h1 {
-  color: #333333;
-  margin: 0;
-  height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 0;
+  height: 80px;
+  color: #333333;
 }
 .aw-page-header-controls {
-  height: 80px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 80px;
 }
 .aw-checkbox-no-margin {
   margin-top: 0px !important;

@@ -1,13 +1,18 @@
+/*---------*\
+  Menu
+\*---------*/
+
 .aw-menu {
 }
 
 .aw-menu__list {
   margin-bottom: 0;
   padding-left: 0;
+
   list-style: none;
+
   &:extend(.clearfix all);
 }
-
   
 .aw-menu__list--sublist {
   display: none;
@@ -15,23 +20,27 @@
 
 .aw-menu__item {
   position: relative;
+
   display: block;
 
   > a {
-    color: @aw-menu-item-color;
-    font-weight: 500;
-
     position: relative;
+
     display: block;
     padding: 10px 15px;
+
+    color: @aw-menu-item-color;
+
+    font-weight: 500;
 
     > i {
       margin-right: 6px;
     }
 
     &:hover, &:focus {
-      text-decoration: none;
       background: @aw-menu-item-hover-bg;
+
+      text-decoration: none;
     }
 
   }
@@ -43,12 +52,10 @@
   }
 
   &.is-expanded {
-    > a {
-
-    }
-    background: @aw-menu-group-expanded-bg;
     border-left: 3px solid;
     border-left-color: @aw-menu-group-expanded-border-left-color;
+
+    background: @aw-menu-group-expanded-bg;
 
     .aw-menu__navigation-icon {
       &:before {
@@ -58,6 +65,7 @@
 
     > .aw-menu__list {
       display: block;
+      
       background: @aw-menu-group-expanded-menu-links-bg;
     }
 
@@ -71,6 +79,7 @@
 .aw-menu__item--link {
   > a {
     padding-left: 36px;
+    
     font-weight: 400;
   }
 }

@@ -1,7 +1,6 @@
-// ###############
-// # Balls Spinner
-// # Loading animation with three balls
-// ###############
+/*--------------*\
+  Balls Spinner
+\*--------------*/
 
 @-moz-keyframes aw-balls-spinner {
   0% {
@@ -43,13 +42,17 @@
 /* :not(:required) hides this rule from IE9 and below */
 .aw-balls-spinner:not(:required) {
   position: relative;
-  text-indent: -9999px;
+  
   display: inline-block;
   width: @aw-balls-spinner-ball-size;
   height: @aw-balls-spinner-ball-size;
-  background: @aw-balls-spinner-one-bg;
   opacity: 0.8;
   border-radius: 100%;
+
+  background: @aw-balls-spinner-one-bg;
+
+  text-indent: -9999px;
+
   -moz-animation: aw-balls-spinner 3s infinite ease-in-out;
   -webkit-animation: aw-balls-spinner 3s infinite ease-in-out;
   animation: aw-balls-spinner 3s infinite ease-in-out;
@@ -60,25 +63,31 @@
 }
 
 .aw-balls-spinner:not(:required)::before {
-  background: @aw-balls-spinner-two-bg;
-  opacity: 0.8;
-  border-radius: 100%;
-  content: '';
   position: absolute;
-  width: @aw-balls-spinner-ball-size;
-  height: @aw-balls-spinner-ball-size;
   top: (@aw-balls-spinner-ball-size * 0.75);
   left: -(@aw-balls-spinner-ball-size * 0.4330128);
+
+  opacity: 0.8;
+  border-radius: 100%;
+  width: @aw-balls-spinner-ball-size;
+  height: @aw-balls-spinner-ball-size;
+
+  background: @aw-balls-spinner-two-bg;
+
+  content: '';
 }
 
 .aw-balls-spinner:not(:required)::after {
-  background: @aw-balls-spinner-three-bg;
-  opacity: 0.8;
-  border-radius: 100%;
-  content: '';
   position: absolute;
-  width: @aw-balls-spinner-ball-size;
-  height: @aw-balls-spinner-ball-size;
   top: (@aw-balls-spinner-ball-size * 0.75);
   left: (@aw-balls-spinner-ball-size * 0.4330128);
+
+  opacity: 0.8;
+  border-radius: 100%;
+  width: @aw-balls-spinner-ball-size;
+  height: @aw-balls-spinner-ball-size;
+
+  background: @aw-balls-spinner-three-bg;
+
+  content: '';
 }
