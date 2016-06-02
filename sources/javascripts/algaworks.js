@@ -64,6 +64,7 @@ AW.onMenuGroupClick = function(event) {
 
 AW.initMenu = function() {
   $('.js-menu > ul > li > a').bind('click', AW.onMenuGroupClick);
+  $('.aw-menu__item .is-active').parents('.aw-menu__item').addClass('is-expanded is-active');
 };
 
 $(function() {
